@@ -1,0 +1,7 @@
+- solo busca inversion en base al acorde anterior en una secuencia, y solo si una nota coincide, si no lo deja en fundamental. no se gasta en calcular movimiento de dedos en total.
+- si toco c d e f g a b, me deja todo en fundamental, a pesar de que podría a ver mejor posicion, pero ningun acorde coincide notas con el anterior
+
+
+para calcular menor movimientos entre todos los dedos
+min(|a−b|,10−|a−b|)
+distancia entre numeros circulares, en este caso 10
