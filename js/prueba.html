@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .ficha {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f5f5f5;
+      border: 2px solid #ccc;
+      font-size: 24px;
+      margin: 10px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .ficha.active {
+      border-color: blue;
+    }
+
+    #borrarTabla {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ccc;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    .eliminar {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ficha" onclick="cambiarColor(this)">DO</div>
+  <div class="ficha" onclick="cambiarColor(this)">DO#</div>
+  <div class="ficha" onclick="cambiarColor(this)">RE</div>
+  <div class="ficha" onclick="cambiarColor(this)">RE#</div>
+  <div class="ficha" onclick="cambiarColor(this)">MI</div>
+  <div class="ficha" onclick="cambiarColor(this)">FA</div>
+  <div class="ficha" onclick="cambiarColor(this)">FA#</div>
+  <div class="ficha" onclick="cambiarColor(this)">SOL</div>
+  <div class="ficha" onclick="cambiarColor(this)">SOL#</div>
+  <div class="ficha" onclick="cambiarColor(this)">LA</div>
+  <div class="ficha" onclick="cambiarColor(this)">LA#</div>
+  <div class="ficha" onclick="cambiarColor(this)">SI</div>
+
+  <div id="borrarTabla" onclick="borrarTabla()">Borrar Tabla</div>
+
+  <table>
+    <tr>
+      <th>Notas</th>
+      <th>Acorde</th>
+      <th>Estado Fundamental</th>
+    </tr>
+  </table>
+
+  <script>
+    const fichas = document.querySelectorAll(".ficha");
+    const tabla = document.querySelector("table");
+
+    fichas.forEach(ficha => {
+      ficha.addEventListener("click", () => {
+        cambiarColor(ficha);
+        const acorde = ficha.textContent;
+        const fila = tabla.insertRow(-1);
+        const celdaNotas = fila.insertCell(0);
+        const celdaAcorde = fila.insertCell(1);
+        const celdaEstadoFundamental = fila.insertCell(2);
+
+        celdaNotas.textContent = acorde;
+        celdaAcorde.textContent = "Notas del acorde"; // Aquí deberías calcular las notas del acorde
+        celdaEstadoFundamental.textContent = "Estado Fundamental"; // Aquí deberías calcular el estado fundamental
+      });
+    });
+
+    function cambiarColor(elemento) {
+      elemento.classList.toggle("active");
+    }
+
+    function borrarTabla() {
+      const filas = tabla.rows.length;
+      for (let i = filas - 1; i > 0; i--) {
+        tabla.deleteRow(i);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
