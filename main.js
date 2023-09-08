@@ -1,6 +1,7 @@
 const fichas = document.querySelectorAll(".ficha");
 const tabla = document.querySelector("table");
 const botonBorrar = document.getElementById("borrarTabla")
+const botonBorrarUltimo = document.querySelectorAll(".borrarUltimo")
 
 let acordesATocar = []
 let objetoInversions;
@@ -28,6 +29,25 @@ botonBorrar.addEventListener("click",() => {
     borrarTabla();
 })
 
+
+botonBorrarUltimo.forEach((boton) => {
+    boton.addEventListener("click",() => {
+        borrarUltimo();
+    })
+
+})
+
+
+function borrarUltimo() {
+    const filas = tabla.rows.length;
+    if (filas > 1) {
+        tabla.deleteRow(filas-1);
+        acordesATocar.pop()
+        
+    }
+    
+    
+}
 
 function borrarTabla() {
     const filas = tabla.rows.length;
