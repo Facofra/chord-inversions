@@ -13,8 +13,8 @@ fichas.forEach((ficha,index) => {
 
         const fila = tabla.insertRow(-1);
         const celdaAcorde = fila.insertCell(0);
-        const celdaTipoInversion = fila.insertCell(1);
-        const celdaNotas = fila.insertCell(2);
+        const celdaNotas = fila.insertCell(1);
+        const celdaTipoInversion = fila.insertCell(2);
         
         acordesATocar.push(acorde)
         objetoInversions = inversionesMenorMovimiento(acordesATocar);
