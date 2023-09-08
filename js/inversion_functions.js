@@ -33,19 +33,34 @@ function calcularMovimientosPorInversion(notasAcorde, notasAcordeAnterior) {
 
 
 const notas = {
-    1:'DO',
-    2:'DO#',
-    3:'RE',
-    4:'RE#',
-    5:'MI',
-    6:'FA',
-    7:'FA#',
-    8:'SOL',
-    9:'SOL#',
-    10:'LA',
-    11:'LA#',
-    12:'SI'
+    1:'C',
+    2:'C#',
+    3:'D',
+    4:'D#',
+    5:'E',
+    6:'F',
+    7:'F#',
+    8:'G',
+    9:'G#',
+    10:'A',
+    11:'A#',
+    12:'B'
 }
+
+// const notas = {
+//     1:'DO',
+//     2:'DO#',
+//     3:'RE',
+//     4:'RE#',
+//     5:'MI',
+//     6:'FA',
+//     7:'FA#',
+//     8:'SOL',
+//     9:'SOL#',
+//     10:'LA',
+//     11:'LA#',
+//     12:'SI'
+// }
 
 const acordes = {
     // MAYORES

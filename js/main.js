@@ -7,8 +7,7 @@ let objetoInversions;
 
 fichas.forEach((ficha,index) => {
     ficha.addEventListener("click", () => {
-        cambiarColor(ficha);
-        setTimeout(()=>{cambiarColor(ficha)},100)
+        
         const acorde = ficha.textContent;
 
         const fila = tabla.insertRow(-1);
@@ -29,10 +28,6 @@ botonBorrar.addEventListener("click",() => {
     borrarTabla();
 })
 
-function cambiarColor(elemento) {
-    elemento.classList.toggle("active");
-
-}
 
 function borrarTabla() {
     const filas = tabla.rows.length;
