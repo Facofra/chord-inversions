@@ -18,9 +18,9 @@ fichas.forEach((ficha,index) => {
         
         acordesATocar.push(acorde)
         objetoInversions = inversionesMenorMovimiento(acordesATocar);
-
+        
         celdaAcorde.textContent = acorde;
-        celdaNotas.textContent = objetoInversions[objetoInversions.length-1]['notasAcorde']; 
+        celdaNotas.innerHTML =`<pre>${formatear_notas(objetoInversions[objetoInversions.length-1]['notasAcorde'])}</pre>`;
         celdaTipoInversion.textContent = objetoInversions[objetoInversions.length-1]['nombreInversion']; 
     });
 });
